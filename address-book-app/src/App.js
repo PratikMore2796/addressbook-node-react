@@ -14,11 +14,11 @@ import { BrowserRouter as Router, Switch,
     Route, Link } from "react-router-dom";
   
 // Import other React Component
-import CreateStudent from 
+import CreateContact from 
     "./Components/create-contact.component";
-import EditStudent from 
+import EditContact from 
     "./Components/edit-contact.component";
-import StudentList from 
+import ContactList from 
     "./Components/contact-list.component";
 import CreateContact from "./Components/create-contact.component";
 function App() {

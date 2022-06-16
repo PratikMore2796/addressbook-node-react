@@ -8,9 +8,7 @@ import ContactForm from "./ContactForm";
 // EditContact Component
 const EditContact = (props) => {
 const [formValues, setFormValues] = useState({
-	pic:"",
-    firstname: "",
-    lastname: "",
+	name: "",
 	email: "",
 	mobile: "",
 });
@@ -40,8 +38,8 @@ useEffect(() => {
 		+ props.match.params.id
 	)
 	.then((res) => {
-		const { pic,firstname,lastname, email, mobile } = res.data;
-		setFormValues({ pic, firstname, lastname, email, mobile });
+		const { name, email, mobile } = res.data;
+		setFormValues({ name, email, mobile });
 	})
 	.catch((err) => console.log(err));
 }, []);

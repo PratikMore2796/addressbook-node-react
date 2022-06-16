@@ -8,7 +8,7 @@ import ContactForm from "./ContactForm";
 // CreateContact Component
 const CreateContact = () => {
 const [formValues, setFormValues] =
-	useState({ pic: '',firstname: '',lastname: '', email: '', mobile: '' })
+	useState({ name: '', email: '', mobile: '' })
 
 // onSubmit handler
 const onSubmit = contactObject => {

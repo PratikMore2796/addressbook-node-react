@@ -5,7 +5,9 @@ import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 const ContactForm = (props) => {
 const validationSchema = Yup.object().shape({
-	name: Yup.string().required("Required"),
+	pic: Yup.string().required("Required"),
+	firstnamme: Yup.string().required("Required"),
+	lastname: Yup.string().required("Required"),
 	email: Yup.string()
 	.email("You have enter an invalid email address")
 	.required("Required"),
@@ -58,10 +60,10 @@ return (
 			/>
 		</FormGroup>
 		<FormGroup>
-			<Field name="mnumber" type="number"
+			<Field name="mobile" type="number"
 				className="form-control" />
 			<ErrorMessage
-			name="mnumber"
+			name="mobile"
 			className="d-block invalid-feedback"
 			component="span"
 			/>

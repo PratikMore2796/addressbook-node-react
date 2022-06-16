@@ -10,23 +10,22 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
   
 // Import from react-router-dom
-import { BrowserRouter as Router, Switch,
-    Route, Link } from "react-router-dom";
+import { BrowserRouter as Router,
+    Route, Link, Routes } from "react-router-dom";
   
 // Import other React Component
 import CreateContact from 
-    "./Components/create-contact.component";
+    "./components/create-contact.component";
 import EditContact from 
-    "./Components/edit-contact.component";
+    "./components/edit-contact.component";
 import ContactList from 
-    "./Components/contact-list.component";
-import CreateContact from "./Components/create-contact.component";
+    "./components/contact-list.component";
 function App() {
   return (
     <Router>
     <div className="App">
       <header className="App-header">
-        <Navbar bg="light" variant="light">
+        <Navbar bg="dark" variant="dark">
           <Container>
             <Navbar.Brand>
               <Link to={"/create-contact"} 
@@ -58,16 +57,17 @@ function App() {
         <Row>
           <Col md={12}>
             <div className="wrapper">
-              <Switch>
-                <Route exact path="/" 
-                  component={CreateContact} />
-                <Route path="/create-contact" 
-                  component={CreateContact} />
-                <Route path="/edit-contact/:id" 
-                  component={EditContact} />
-                <Route path="/contact-list" 
-                  component={ContactList} />
-              </Switch>
+              <Routes>
+                <Route exact path='/' >
+                  {CreateContact}
+                </Route>
+                <Route exact path='/create-contact' >
+                  {CreateContact}
+                </Route>
+                <Route exact path='/contact-list' >
+                  {ContactList}
+                </Route>
+              </Routes>
             </div>
           </Col>
         </Row>

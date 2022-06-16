@@ -1,7 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { FormGroup, FormControl, Button } from "react-bootstrap";
+import { FormGroup, Button } from "react-bootstrap";
 
 const ContactForm = (props) => {
 const validationSchema = Yup.object().shape({
@@ -74,8 +74,7 @@ return (
 		</Button>
 		</Form>
 	</Formik>
-	</div>
-);
+	</div>);
 };
 
 export default ContactForm;

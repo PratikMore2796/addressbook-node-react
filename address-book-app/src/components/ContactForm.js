@@ -23,6 +23,7 @@ return (
 	<Formik {...props} validationSchema={validationSchema}>
 		<Form>
 		<FormGroup>
+			<label for="Profile Picture">Upload Profile Pic</label>
 			<Field name="pic" type="file"
 				className="form-control" />
 			<ErrorMessage
@@ -33,6 +34,7 @@ return (
 		</FormGroup>
 		
 		<FormGroup>
+		<label for="First Name">First Name</label>
 			<Field name="firstname" type="text"
 				className="form-control" />
 			<ErrorMessage
@@ -43,6 +45,7 @@ return (
 		</FormGroup>
 		
 		<FormGroup>
+		<label for="Last Name">Last Name</label>
 			<Field name="lastname" type="text"
 				className="form-control" />
 			<ErrorMessage
@@ -52,6 +55,7 @@ return (
 			/>
 		</FormGroup>
 		<FormGroup>
+		<label for="Email ID">Email Id</label>
 			<Field name="email" type="text"
 				className="form-control" />
 			<ErrorMessage
@@ -61,6 +65,7 @@ return (
 			/>
 		</FormGroup>
 		<FormGroup>
+		<label for="Mobile Number">Mobile Number</label>
 			<Field name="mobile" type="number"
 				className="form-control" />
 			<ErrorMessage

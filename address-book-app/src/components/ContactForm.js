@@ -5,7 +5,9 @@ import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 const ContactForm = (props) => {
 const validationSchema = Yup.object().shape({
-	name: Yup.string().required("Required"),
+	pic: Yup.string().required("Required"),
+	firstname: Yup.string().required("Required"),
+	lastname: Yup.string().required("Required"),
 	email: Yup.string()
 	.email("You have enter an invalid email address")
 	.required("Required"),
@@ -20,10 +22,31 @@ return (
 	<Formik {...props} validationSchema={validationSchema}>
 		<Form>
 		<FormGroup>
-			<Field name="name" type="text"
+			<Field name="file" type="file"
+				className="form-control" onChange={(event)=>{
+					setFieldValue("file", event.currentTarget.files[0]);
+				}}/>
+			<ErrorMessage
+			name="file"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		<FormGroup>
+			<Field name="firstname" type="text"
 				className="form-control" />
 			<ErrorMessage
-			name="name"
+			name="firstname"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		
+		<FormGroup>
+			<Field name="lastname" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="lastname"
 			className="d-block invalid-feedback"
 			component="span"
 			/>
@@ -38,10 +61,10 @@ return (
 			/>
 		</FormGroup>
 		<FormGroup>
-			<Field name="mnumber" type="number"
+			<Field name="mobile" type="number"
 				className="form-control" />
 			<ErrorMessage
-			name="mnumber"
+			name="mobile"
 			className="d-block invalid-feedback"
 			component="span"
 			/>

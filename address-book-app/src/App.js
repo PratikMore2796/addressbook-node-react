@@ -11,7 +11,7 @@ import "./App.css";
   
 // Import from react-router-dom
 import { BrowserRouter as Router,
-    Route, Link, Routes } from "react-router-dom";
+    Switch, Link, Routes } from "react-router-dom";
   
 // Import other React Component
 import CreateContact from 
@@ -57,17 +57,16 @@ function App() {
         <Row>
           <Col md={12}>
             <div className="wrapper">
-              <Routes>
-                <Route exact path='/' >
-                  {CreateContact}
-                </Route>
-                <Route exact path='/create-contact' >
-                  {CreateContact}
-                </Route>
-                <Route exact path='/contact-list' >
-                  {ContactList}
-                </Route>
-              </Routes>
+              <Switch>
+              <Route path="/" 
+                  component={CreateContact} />  
+                <Route path="/create-contact" 
+                  component={CreateContact} />
+                <Route path="/edit-contact/:id" 
+                  component={EditContact} />
+                <Route path="/contact-list" 
+                  component={ContactList} />
+              </Switch>
             </div>
           </Col>
         </Row>

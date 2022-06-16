@@ -1,6 +1,7 @@
 // Import React
 import React from "react";
-  
+
+import {createRoot} from "react-dom/client";
 // Import Bootstrap
 import { Nav, Navbar, Container, Row, Col } 
         from "react-bootstrap";
@@ -11,7 +12,7 @@ import "./App.css";
   
 // Import from react-router-dom
 import { BrowserRouter as Router,
-    Switch, Link, Routes } from "react-router-dom";
+     Link, Routes, Route } from "react-router-dom";
   
 // Import other React Component
 import CreateContact from 
@@ -21,6 +22,8 @@ import EditContact from
 import ContactList from 
     "./components/contact-list.component";
 function App() {
+  const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
   return (
     <Router>
     <div className="App">
@@ -33,7 +36,6 @@ function App() {
                 React and Node Address Book
               </Link>
             </Navbar.Brand>
-
             <Nav className="justify-content-end">
               <Nav>
                 <Link to={"/create-contact"} 
@@ -41,7 +43,6 @@ function App() {
                   Create Contact
                 </Link>
               </Nav>
-
               <Nav>
                 <Link to={"/contact-list"} 
                   className="nav-link">
@@ -57,16 +58,16 @@ function App() {
         <Row>
           <Col md={12}>
             <div className="wrapper">
-              <Switch>
-              <Route path="/" 
-                  component={CreateContact} />  
+              <Routes>
+                <Route path="/" 
+                  element={CreateContact} />  
                 <Route path="/create-contact" 
-                  component={CreateContact} />
+                  element={CreateContact} />
                 <Route path="/edit-contact/:id" 
-                  component={EditContact} />
+                  element={EditContact} />
                 <Route path="/contact-list" 
-                  component={ContactList} />
-              </Switch>
+                  element={ContactList} />
+              </Routes>
             </div>
           </Col>
         </Row>

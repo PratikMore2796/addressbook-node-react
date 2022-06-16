@@ -8,7 +8,7 @@ const [contacts, setContacts] = useState([]);
 
 useEffect(() => {
 	axios
-	.get("http://localhost:4000/contacts/")
+	.get("http://localhost:3000/contact-list")
 	.then(({ data }) => {
 		setContacts(data);
 	})

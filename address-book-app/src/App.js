@@ -60,13 +60,13 @@ const root = createRoot(rootElement);
             <div className="wrapper">
               <Routes>
                 <Route path="/" 
-                  element={CreateContact} />  
+                  element={<CreateContact></CreateContact>} />  
                 <Route path="/create-contact" 
-                  element={CreateContact} />
+                  element={<CreateContact></CreateContact>} />
                 <Route path="/edit-contact/:id" 
-                  element={EditContact} />
+                  element={<EditContact></EditContact>} />
                 <Route path="/contact-list" 
-                  element={ContactList} />
+                  element={<ContactList></ContactList>} />
               </Routes>
             </div>
           </Col>

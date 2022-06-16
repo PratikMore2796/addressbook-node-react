@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 const ContactForm = (props) => {
 const validationSchema = Yup.object().shape({
-	pic: Yup.string().required("Required"),
+	pic: Yup.string(),
 	firstnamme: Yup.string().required("Required"),
 	lastname: Yup.string().required("Required"),
 	email: Yup.string()

@@ -20,10 +20,30 @@ return (
 	<Formik {...props} validationSchema={validationSchema}>
 		<Form>
 		<FormGroup>
-			<Field name="name" type="text"
+			<Field name="pic" type="file"
 				className="form-control" />
 			<ErrorMessage
-			name="name"
+			name="pic"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		
+		<FormGroup>
+			<Field name="firstname" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="firstname"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		
+		<FormGroup>
+			<Field name="lastname" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="lastname"
 			className="d-block invalid-feedback"
 			component="span"
 			/>
